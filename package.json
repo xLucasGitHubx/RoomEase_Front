@@ -4,10 +4,10 @@
   "description": "Room Ease - Angular Js Real Estate Template",
   "private": true,
   "scripts": {
-    "ng": "ng",
-    "build": "ng build --configuration=production",
+     "ng": "ng",
+    "build": "ng build --configuration=production --output-path=dist/app",
     "start": "npx serve -s dist/app -l $PORT",
-    "watch": "ng build --watch --configuration development",
+    "watch": "ng build --watch --configuration=development",
     "test": "ng test",
     "heroku-postbuild": "npm run build"
   },
