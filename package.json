@@ -6,7 +6,7 @@
     "heroku-prebuild": "npm config set legacy-peer-deps true",
     "ng": "ng",
     "build": "ng build --configuration=production --output-path=dist/app",
-    "start": "npx serve -s dist/app -l $PORT",
+    "start": "npx serve -s dist/app/browser -l $PORT",
     "watch": "ng build --watch --configuration=development",
     "test": "ng test",
     "heroku-postbuild": "npm run build"
