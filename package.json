@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "heroku-prebuild": "npm config set legacy-peer-deps true",
-    "build": "npx ng build --configuration=production --output-path=dist/app",
-    "start": "npx ng build --configuration=production --output-path=dist/app && ( [ -f dist/app/index.html ] && npx serve -s dist/app -l $PORT || npx serve -s dist/app/browser -l $PORT )",
-    "ng": "npx ng",
-    "watch": "npx ng build --watch --configuration=development",
-    "test": "npx ng test"
+    "build": "node node_modules/@angular/cli/bin/ng build --configuration=production --output-path=dist/app",
+    "start": "node node_modules/@angular/cli/bin/ng build --configuration=production --output-path=dist/app && ( [ -f dist/app/index.html ] && node node_modules/serve/bin/serve.js -s dist/app -l $PORT || node node_modules/serve/bin/serve.js -s dist/app/browser -l $PORT )",
+    "watch": "node node_modules/@angular/cli/bin/ng build --watch --configuration=development",
+    "test": "node node_modules/@angular/cli/bin/ng test",
+    "heroku-postbuild": "npm run build"
   },
   "engines": {
     "node": ">=18.19 <23"
