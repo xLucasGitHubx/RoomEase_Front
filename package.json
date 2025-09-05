@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "heroku-prebuild": "npm config set legacy-peer-deps true",
-    "ng": "ng",
-    "build": "ng build --configuration=production --output-path=dist/app",
+    "ng": "npx ng",
+    "build": "npx ng build --configuration=production --output-path=dist/app",
     "start": "npm run build && npx serve -s dist/app/browser -l $PORT",
-    "watch": "ng build --watch --configuration=development",
-    "test": "ng test",
+    "watch": "npx ng build --watch --configuration=development",
+    "test": "npx ng test",
     "heroku-postbuild": "npm run build"
   },
   "engines": {
