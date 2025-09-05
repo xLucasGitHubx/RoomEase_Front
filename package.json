@@ -1,12 +1,12 @@
 {
-  "name": "roomease",
+  "name": "app",
   "version": "1.0.0",
   "description": "Room Ease - Angular Js Real Estate Template",
   "private": true,
   "scripts": {
     "ng": "ng",
     "build": "ng build --configuration=production",
-    "start": "npx serve -s dist/roomease -l $PORT",
+    "start": "npx serve -s dist/app -l $PORT",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "heroku-postbuild": "npm run build"
