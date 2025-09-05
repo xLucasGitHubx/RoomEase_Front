@@ -5,8 +5,7 @@
   "scripts": {
     "heroku-prebuild": "npm config set legacy-peer-deps true",
     "build": "npx ng build --configuration=production --output-path=dist/app",
-    "start": "npx serve -s dist/app/browser -l $PORT",
-    "heroku-postbuild": "npm run build",
+    "start": "npx ng build --configuration=production --output-path=dist/app && ( [ -f dist/app/index.html ] && npx serve -s dist/app -l $PORT || npx serve -s dist/app/browser -l $PORT )",
     "ng": "npx ng",
     "watch": "npx ng build --watch --configuration=development",
     "test": "npx ng test"
@@ -15,7 +14,6 @@
     "node": ">=18.19 <23"
   },
   "dependencies": {
-    "@angular-slider/ngx-slider": "^19.0.0",
     "@angular/animations": "^19.0.0",
     "@angular/cdk": "^19.2.16",
     "@angular/common": "^19.0.0",
@@ -35,6 +33,7 @@
     "ngx-countup": "^13.2.0",
     "ngx-infinite-scroll": "^20.0.0",
     "ngx-slick-carousel": "^17.0.0",
+    "@angular-slider/ngx-slider": "^19.0.0",
     "ngx-slider": "^0.0.5",
     "rxjs": "~7.8.0",
     "serve": "^14.2.5",
