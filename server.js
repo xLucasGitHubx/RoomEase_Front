@@ -7,8 +7,7 @@ const PORT = process.env.PORT || 8080;
 
 const candidates = [
   'dist/app/browser',
-  'dist/app',
-  // ajoute ici d'autres chemins possibles si besoin
+  'dist/app'
 ];
 
 function pickDist() {
