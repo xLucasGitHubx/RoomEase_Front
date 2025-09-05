@@ -3,15 +3,17 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "heroku-prebuild": "npm config set legacy-peer-deps true",
+    "preinstall": "npm config set legacy-peer-deps true",
     "build": "node node_modules/@angular/cli/bin/ng build --configuration=production --output-path=dist/app",
-    "start": "node node_modules/@angular/cli/bin/ng build --configuration=production --output-path=dist/app && ( [ -f dist/app/index.html ] && node node_modules/serve/bin/serve.js -s dist/app -l $PORT || node node_modules/serve/bin/serve.js -s dist/app/browser -l $PORT )",
+    "start": "node node_modules/serve/bin/serve.js -s dist/app/browser -l $PORT",
+    "heroku-postbuild": "npm run build",
+    "ng": "node node_modules/@angular/cli/bin/ng",
     "watch": "node node_modules/@angular/cli/bin/ng build --watch --configuration=development",
-    "test": "node node_modules/@angular/cli/bin/ng test",
-    "heroku-postbuild": "npm run build"
+    "test": "node node_modules/@angular/cli/bin/ng test"
   },
   "engines": {
-    "node": ">=18.19 <23"
+    "node": "20.x",
+    "npm": "10.x"
   },
   "dependencies": {
     "@angular/animations": "^19.0.0",
